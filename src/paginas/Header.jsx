@@ -3,20 +3,12 @@ import { useState } from 'react'
 function Header({ usuario, onLogout }) {
   const [isHovered, setIsHovered] = useState(false)
 
-  // Lista base de navegación
-  const navItems = ['inicio', 'paises', 'noticias']
-  
-  // Si el usuario es admin, añadimos estadísticas a la lista
-  if (usuario?.role === 'admin') {
-    navItems.push('estadisticas')
-  }
-
   return (
     <header className="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-slate-200">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-20">
           
-          {/* Logo y Nombre con Animación */}
+          {/* Logo y Nombre con Animación (Original Restaurado) */}
           <div className="flex items-center gap-3 group cursor-pointer" onClick={() => window.location.hash = '#inicio'}>
             <div className="relative">
               <img 
@@ -31,25 +23,21 @@ function Header({ usuario, onLogout }) {
             </h1>
           </div>
 
-          {/* Navegación Central - DINÁMICA */}
+          {/* Navegación Central (Añadido 'estadisticas' al array original) */}
           <nav className="hidden md:flex items-center gap-8">
-            {navItems.map((item) => (
+            {['inicio', 'paises', 'noticias', 'estadisticas'].map((item) => (
               <a 
                 key={item}
                 href={`#${item}`} 
-                className={`text-sm font-bold uppercase tracking-widest transition-colors relative group ${
-                  item === 'estadisticas' ? 'text-indigo-600' : 'text-slate-600 hover:text-blue-600'
-                }`}
+                className="text-sm font-bold text-slate-600 hover:text-blue-600 uppercase tracking-widest transition-colors relative group"
               >
                 {item}
-                <span className={`absolute -bottom-1 left-0 h-0.5 transition-all group-hover:w-full ${
-                  item === 'estadisticas' ? 'bg-indigo-600 w-0' : 'bg-blue-600 w-0'
-                }`}></span>
+                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-blue-600 transition-all group-hover:w-full"></span>
               </a>
             ))}
           </nav>
 
-          {/* Grupo Derecha: Usuario / Auth */}
+          {/* Grupo Derecha: Usuario / Auth (Original Restaurado) */}
           <div className="flex items-center gap-4">
             {usuario ? (
               <div className="flex items-center gap-3 bg-slate-100 p-1.5 pr-4 rounded-full border border-slate-200 hover:bg-white transition-all shadow-sm">
