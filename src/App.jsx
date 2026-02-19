@@ -9,9 +9,6 @@ import Paises from './paginas/Paises'
 import Noticias from './paginas/Noticias'
 import Register from './paginas/Register'
 
-// Importante: Tailwind gestionará casi todo, pero mantenemos App.css para ajustes globales
-import './App.css'
-
 function App() {
   // Estado global del usuario (Requisito: Persistencia y estado real)
   const [usuarioLogueado, setUsuarioLogueado] = useState(() => {
