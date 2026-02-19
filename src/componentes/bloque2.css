@@ -1,0 +1,135 @@
+/* Título de la sección */
+.section-title {
+  text-align: center;
+  margin: 60px 0 30px 0; /* más separación arriba */
+  font-size: 2.2rem;
+  color: #1a73e8; /* azul principal */
+  font-weight: 600;
+}
+
+/* Contenedor de los bloques */
+.blocks-container {
+  display: flex;
+  justify-content: center; /* centra bloques horizontalmente */
+  align-items: stretch; /* iguala altura */
+  gap: 15px; /* espacio entre bloques */
+  flex-wrap: wrap;
+  text-align: center;
+}
+
+/* Bloques izquierdo y derecho */
+.blockIzquierda,
+.blockDerecha {
+  flex: 1;
+  min-width: 340px; /* bloques más anchos */
+  max-width: 380px; /* bloques más anchos */
+  padding: 25px;
+  box-sizing: border-box;
+  border-radius: 12px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Colores de fondo suavizados */
+.blockIzquierda {
+  background-color: #d0e4ff; /* azul suave */
+  color: #1a1a1a;
+}
+
+.blockDerecha {
+  background-color: #ffe5d0; /* naranja suave */
+  color: #1a1a1a;
+}
+
+/* Hover de los bloques */
+.blockIzquierda:hover,
+.blockDerecha:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* Textos */
+.textIzquierda h2,
+.textDerecha h2 {
+  font-weight: 600;
+  color: #1a73e8;
+  font-size: 1.7rem; /* título más grande */
+  margin: 25px 0 12px 0;
+}
+
+.textIzquierda p,
+.textDerecha p {
+  font-size: 16px;
+  line-height: 1.6;
+  margin: 0 30px 12px 30px;
+}
+
+/* Imágenes */
+.imgIzquierda,
+.imgDerecha {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.imgIzquierda img,
+.imgDerecha img {
+  width: 100%;
+  max-width: 340px; /* imagen proporcional al bloque ancho */
+  height: auto;
+  border-radius: 10px;
+  object-fit: cover;
+  display: block;
+  margin: 0 auto;
+}
+
+/* Botones */
+.botonIzquierda,
+.botonDerecha {
+  margin-top: 15px;
+  padding: 12px 28px;
+  background: linear-gradient(135deg, #1a73e8, #4da3ff);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 600;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+}
+
+.botonIzquierda:hover,
+.botonDerecha:hover {
+  background: linear-gradient(135deg, #4da3ff, #1a73e8);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.25);
+}
+
+/* Responsividad */
+@media (max-width: 1024px) {
+  .blocks-container {
+    gap: 12px;
+  }
+}
+
+@media (max-width: 768px) {
+  .blocks-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .blockIzquierda,
+  .blockDerecha {
+    max-width: 90%;
+    padding: 20px;
+  }
+
+  .imgIzquierda img,
+  .imgDerecha img {
+    max-width: 100%;
+  }
+}
